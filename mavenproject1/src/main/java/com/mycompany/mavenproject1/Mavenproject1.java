@@ -32,7 +32,7 @@ public class Mavenproject1 {
         while (running) {
 
             System.out.println("\n===== MENU =====");
-            System.out.println("1. Calculator"); 
+            System.out.println("1. Calculator");
             System.out.println("2. Area of Circle");
             System.out.println("3. Volume of Cylinder");
             System.out.println("4. Exit");
