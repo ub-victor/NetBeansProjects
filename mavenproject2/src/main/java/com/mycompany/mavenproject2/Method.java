@@ -15,9 +15,9 @@ public class Method {
                 
     }
     
-    public int sum(int a, int b, int sum){
-        a=10; b=10;
-        sum = a+b;
+    public int sum(int a, int b){
+        
+        int sum = a+b;
         System.out.println(sum);
         return sum;
                 
