@@ -13,6 +13,8 @@ public class NewClass {
         int i;
         for (i=1;i<=3;i++){
             System.out.println("This is  iteration number"+ i);
+            if(i==5){
+            break;}
         }
     }
 }
