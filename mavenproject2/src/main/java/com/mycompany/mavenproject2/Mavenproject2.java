@@ -16,8 +16,12 @@ public class Mavenproject2 {
 //        loop.terminate();
 //        System.out.println("The value in b is"+ loop.b);
 //        loop.looping();
-          Multiplicationtable multi = new Multiplicationtable();
-          multi.multiplication();
+
+//          Multiplicationtable multi = new Multiplicationtable();
+//          multi.multiplication();
+
+            Method meth = new Method();
+
         
     }
 }
