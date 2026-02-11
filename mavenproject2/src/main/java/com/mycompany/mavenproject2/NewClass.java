@@ -12,10 +12,11 @@ public class NewClass {
     void terminate(){
         int i;
         for (i=1;i<=3;i++){
-            System.out.println("This is  iteration number"+ i);
             if(i==5){
                 break;
             }
+            System.out.println("This is  iteration number"+ i);
+            
         }
     }
 }
