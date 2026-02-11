@@ -22,7 +22,7 @@ public class Mavenproject2 {
 
             Method meth = new Method();
             meth.helloWorld();
-            meth.sum(0, 0, 0)
+        int sum = meth.sum(12, 12);
 
         
     }
