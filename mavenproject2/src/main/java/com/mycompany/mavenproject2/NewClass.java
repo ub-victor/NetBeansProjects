@@ -11,9 +11,11 @@ package com.mycompany.mavenproject2;
 public class NewClass {
     void terminate(){
         int i;
-        for (i=1;i<=10;i++){
+        for (i=1; i<=10; i++){
             if(i%2 ==0){
                 break;
+            }{
+                continue;
             }
             System.out.println("This is  iteration number"+ i);
             
