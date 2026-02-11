@@ -21,6 +21,8 @@ public class Mavenproject2 {
 //          multi.multiplication();
 
             Method meth = new Method();
+            meth.helloWorld();
+            meth.sum(0, 0, 0)
 
         
     }
