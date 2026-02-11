@@ -9,6 +9,7 @@ package com.mycompany.mavenproject2;
  * @author victoire
  */
 public class NewClass {
+    int b = 223;
     void terminate(){
         int i;
         for (i=1; i<=10; i++){

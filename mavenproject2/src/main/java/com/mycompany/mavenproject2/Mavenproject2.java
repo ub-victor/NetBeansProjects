@@ -12,8 +12,9 @@ public class Mavenproject2 {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        NewClass ite = new NewClass();
-        ite.terminate();
+        NewClass loop = new NewClass();
+        loop.terminate();
+        System.out.println("The value in b is"+ loop.b);
         
     }
 }
