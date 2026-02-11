@@ -28,6 +28,7 @@ public class NewClass {
                 System.out.println("The value for i is "+ i);
                 System.out.println("The value for j is "+ j);
             }
+           System.out.println("I finished iteration number\t"+ j);
         }
     }
 }
