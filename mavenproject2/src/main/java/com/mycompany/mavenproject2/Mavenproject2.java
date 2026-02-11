@@ -15,6 +15,7 @@ public class Mavenproject2 {
         NewClass loop = new NewClass();
         loop.terminate();
         System.out.println("The value in b is"+ loop.b);
+        loop.looping();
         
     }
 }
