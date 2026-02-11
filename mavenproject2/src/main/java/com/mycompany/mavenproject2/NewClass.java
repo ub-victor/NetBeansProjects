@@ -26,7 +26,7 @@ public class NewClass {
         for (i=1; i<=10; i++){
             for (j=1; j<=10; j++){
                 System.out.println("The value for i is "+ i);
-                System.out.println("The value for i is "+ i);
+                System.out.println("The value for j is "+ j);
             }
         }
     }
