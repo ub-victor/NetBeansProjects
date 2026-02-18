@@ -10,8 +10,11 @@ package com.mycompany.ggroupui;
  */
 public class SimpleExample {
     setTitle("Siple GUI Frame");
+    setSise(300, 200);
+    setLocationRelativeTo(null);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
     }
 }
