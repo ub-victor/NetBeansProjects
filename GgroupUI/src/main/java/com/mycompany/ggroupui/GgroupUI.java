@@ -1,22 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.ggroupui;
 
+import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author victoire
- */
-public class SimpleExample {
-    setTitle("Siple GUI Frame");
-    setSise(300, 200);
-    setLocationRelativeTo(null);
-    setDefaultCloseOperation(EXIT_ON_CLOSE);
+public class SimpleExample extends JFrame {
+
+    // Constructor
+    public SimpleExample() {
+        setTitle("Simple GUI Frame");
+        setSize(300, 200);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable);
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                SimpleExample ex = new SimpleExample();
+                ex.setVisible(true);
+            }
+        });
     }
 }
