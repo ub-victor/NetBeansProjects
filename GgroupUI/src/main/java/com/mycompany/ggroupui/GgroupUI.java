@@ -4,6 +4,8 @@
 
 package com.mycompany.ggroupui;
 
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author victoire
@@ -15,6 +17,6 @@ public class SimpleExample {
     setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     public static void main(String[] args) {
-        
+        SwingUtilities.invokeLater(new Runnable);
     }
 }
