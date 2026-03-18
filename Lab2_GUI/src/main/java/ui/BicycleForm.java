@@ -82,6 +82,7 @@ public class BicycleForm extends javax.swing.JFrame {
         btnDelete.setText("Delete");
 
         btnExit.setText("Exit");
+        btnExit.addActionListener(this::btnExitActionPerformed);
 
         jLabel1.setBackground(new java.awt.Color(255, 0, 0));
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
@@ -149,7 +150,23 @@ public class BicycleForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        try {
+            int start = Integer.parseInt(txtStart.getText());
+            int end = Integer.parseInt(txtEnd.getText());
+            int total = Integer.parseInt(txtTotal.getText());
+            int amount = Integer.parseInt(txtAmount.getText());
+
+            model.Bicycle b = new model.Bicycle(start, end, total, amount);
+
+             dao.BicycleDAO dao = new dao.BicycleDAO();
+             dao.save(b);
+
+             javax.swing.JOptionPane.showMessageDialog(this, "Saved successfully!");
+
+             } catch (Exception e) {
+             e.printStackTrace();
+             javax.swing.JOptionPane.showMessageDialog(this, "Error saving!");
+        }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
@@ -168,6 +185,10 @@ public class BicycleForm extends javax.swing.JFrame {
     javax.swing.JOptionPane.showMessageDialog(this, "Invalid input!");
 }
     }//GEN-LAST:event_btnCalculateActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
