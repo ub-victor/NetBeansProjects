@@ -29,7 +29,6 @@ public class MushroomForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        chkConvex = new javax.swing.JRadioButton();
         lblResult = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnIdentify = new javax.swing.JButton();
@@ -38,13 +37,12 @@ public class MushroomForm extends javax.swing.JFrame {
         chkGills = new javax.swing.JCheckBox();
         chkForest = new javax.swing.JCheckBox();
         chkRing = new javax.swing.JCheckBox();
+        chkConvex = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         jLabel1.setText("MushroomForm");
-
-        chkConvex.setText("Convex cap?");
 
         lblResult.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         lblResult.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -76,6 +74,8 @@ public class MushroomForm extends javax.swing.JFrame {
         chkRing.setText("Has ring?");
         chkRing.addActionListener(this::chkRingActionPerformed);
 
+        chkConvex.setText("Convex cap?");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,10 +101,10 @@ public class MushroomForm extends javax.swing.JFrame {
                         .addGap(288, 288, 288))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chkConvex)
                             .addComponent(chkRing)
                             .addComponent(chkForest)
-                            .addComponent(chkGills)
-                            .addComponent(chkConvex))
+                            .addComponent(chkGills))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -118,9 +118,9 @@ public class MushroomForm extends javax.swing.JFrame {
                 .addComponent(chkForest)
                 .addGap(39, 39, 39)
                 .addComponent(chkRing)
-                .addGap(54, 54, 54)
+                .addGap(26, 26, 26)
                 .addComponent(chkConvex)
-                .addGap(18, 18, 18)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -129,7 +129,7 @@ public class MushroomForm extends javax.swing.JFrame {
                     .addComponent(btnIdentify)
                     .addComponent(btnSave)
                     .addComponent(btnExit))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
 
         pack();
@@ -208,7 +208,7 @@ public class MushroomForm extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnIdentify;
     private javax.swing.JButton btnSave;
-    private javax.swing.JRadioButton chkConvex;
+    private javax.swing.JCheckBox chkConvex;
     private javax.swing.JCheckBox chkForest;
     private javax.swing.JCheckBox chkGills;
     private javax.swing.JCheckBox chkRing;

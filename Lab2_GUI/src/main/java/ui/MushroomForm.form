@@ -47,10 +47,10 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="chkConvex" min="-2" max="-2" attributes="0"/>
                           <Component id="chkRing" min="-2" max="-2" attributes="0"/>
                           <Component id="chkForest" min="-2" max="-2" attributes="0"/>
                           <Component id="chkGills" min="-2" max="-2" attributes="0"/>
-                          <Component id="chkConvex" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -69,9 +69,9 @@
               <Component id="chkForest" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Component id="chkRing" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="chkConvex" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblResult" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -82,7 +82,7 @@
                   <Component id="btnSave" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnExit" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="183" max="32767" attributes="0"/>
+              <EmptySpace pref="186" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -94,11 +94,6 @@
           <Font name="Liberation Sans" size="24" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="MushroomForm"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="chkConvex">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Convex cap?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lblResult">
@@ -192,6 +187,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkRingActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkConvex">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Convex cap?"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
