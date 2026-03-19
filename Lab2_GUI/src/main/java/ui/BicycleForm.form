@@ -89,9 +89,9 @@
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="txtStart" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtEnd" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="txtTotal" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="txtAmount" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtEnd" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -231,6 +231,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Liberation Sans" size="15" style="1"/>
+        </Property>
+        <Property name="alignmentX" type="float" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="3.7" type="code"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
