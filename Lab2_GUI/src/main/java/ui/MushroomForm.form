@@ -47,10 +47,10 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="chkConvex" min="-2" max="-2" attributes="0"/>
-                          <Component id="chkGills" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkRing" min="-2" max="-2" attributes="0"/>
                           <Component id="chkForest" min="-2" max="-2" attributes="0"/>
-                          <Component id="chkRing" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkGills" min="-2" max="-2" attributes="0"/>
+                          <Component id="chkConvex" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -65,13 +65,13 @@
               <Component id="jLabel1" min="-2" pref="46" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="chkGills" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="chkForest" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-              <Component id="chkRing" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Component id="chkConvex" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="chkForest" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <Component id="chkRing" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="chkConvex" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblResult" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -82,7 +82,7 @@
                   <Component id="btnSave" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnExit" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="174" max="32767" attributes="0"/>
+              <EmptySpace pref="183" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -94,21 +94,6 @@
           <Font name="Liberation Sans" size="24" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="MushroomForm"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="chkGills">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Has gills?"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="chkForest">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Grows in forest?"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="chkRing">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Has ring?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="chkConvex">
@@ -185,6 +170,27 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkGills">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Has gills?"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkForest">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Grows in forest?"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkForestActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="chkRing">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Has ring?"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkRingActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
