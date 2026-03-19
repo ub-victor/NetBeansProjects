@@ -62,11 +62,16 @@ public class MushroomForm extends javax.swing.JFrame {
         btnIdentify.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnIdentify.setText("Identify");
         btnIdentify.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        btnIdentify.addActionListener(this::btnIdentifyActionPerformed);
 
+        btnSave.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnSave.setText("Save");
+        btnSave.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         btnSave.addActionListener(this::btnSaveActionPerformed);
 
+        btnExit.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnExit.setText("Exit");
+        btnExit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,7 +126,7 @@ public class MushroomForm extends javax.swing.JFrame {
                     .addComponent(btnIdentify)
                     .addComponent(btnSave)
                     .addComponent(btnExit))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         pack();
@@ -130,6 +135,17 @@ public class MushroomForm extends javax.swing.JFrame {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnIdentifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdentifyActionPerformed
+        boolean gills = chkGills.isSelected();
+        boolean forest = chkForest.isSelected();
+        boolean ring = chkRing.isSelected();
+        boolean convex = chkConvex.isSelected();
+
+        String result = util.MushroomLogic.identify(gills, forest, ring, convex);
+
+        lblResult.setText(result);
+    }//GEN-LAST:event_btnIdentifyActionPerformed
 
     /**
      * @param args the command line arguments
