@@ -54,12 +54,14 @@ public class MushroomForm extends javax.swing.JFrame {
 
         lblResult.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         lblResult.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        lblResult.setPreferredSize(new java.awt.Dimension(100, 22));
+        lblResult.setPreferredSize(new java.awt.Dimension(200, 22));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel2.setText("Result:");
 
+        btnIdentify.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnIdentify.setText("Identify");
+        btnIdentify.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         btnSave.setText("Save");
         btnSave.addActionListener(this::btnSaveActionPerformed);
@@ -86,7 +88,7 @@ public class MushroomForm extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(288, 288, 288))
                     .addGroup(layout.createSequentialGroup()
