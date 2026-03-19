@@ -1,13 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author victoire
- */
 public class Mushroom {
-    
+
+    private int id;
+    private String name;
+    private boolean hasGills;
+    private boolean forest;
+    private boolean hasRing;
+    private boolean convex;
+
+    public Mushroom(String name, boolean hasGills, boolean forest, boolean hasRing, boolean convex) {
+        this.name = name;
+        this.hasGills = hasGills;
+        this.forest = forest;
+        this.hasRing = hasRing;
+        this.convex = convex;
+    }
+
+    public String getName() { return name; }
+    public boolean isHasGills() { return hasGills; }
+    public boolean isForest() { return forest; }
+    public boolean isHasRing() { return hasRing; }
+    public boolean isConvex() { return convex; }
 }
