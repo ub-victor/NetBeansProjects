@@ -16,10 +16,14 @@ Both modules store data in a local MySQL database.
 - Click **Identify** to classify the mushroom using simple boolean logic.
 - Click **Save** to persist the identified mushroom to the database.
 
+> 🔎 The logic is implemented in `src/main/java/util/MushroomLogic.java`.
+
 ### 🚲 Bicycle Time/Amount Calculator
 - Enter a start time and end time (hours, integers).
 - Click **Calculate** to compute total hours and the rental amount using a time-based pricing model.
 - Save, update, and delete records from the database using the form.
+
+> 🔎 The pricing logic is implemented in `src/main/java/util/Calculator.java`.
 
 ---
 
@@ -49,8 +53,10 @@ This project expects a MySQL database named `lab2_db`. Update the connection det
 ```java
 private static final String URL = "jdbc:mysql://localhost:3306/lab2_db";
 private static final String USER = "root";
-private static final String PASSWORD = "Ushindi123!";
+private static final String PASSWORD = "Ushindi123!"; // change this
 ```
+
+⚠️ **Security note:** Storing credentials in source code is not recommended for production. Prefer environment variables or a configuration properties file.
 
 ### Recommended schema (example)
 
@@ -85,6 +91,8 @@ CREATE TABLE IF NOT EXISTS bicycle (
 2. Ensure the database is running and credentials in `DBConnection` are correct.
 3. Run `ui.Lab2_GUI` (`Lab2_GUI` class) to open the GUI.
 
+> 💡 Note: `Lab2_GUI` launches the Mushroom form by default. To run the Bicycle form directly, launch `ui.BicycleForm` instead.
+
 ### Option 2: Using Maven from the command line
 
 ```bash
@@ -101,17 +109,38 @@ java -cp "target/Lab2_GUI-1.0-SNAPSHOT.jar:$(echo ~/.m2/repository/com/mysql/mys
 
 ---
 
-## 🧪 Testing / Quick Smoke Test
+## 🧪 Quick Smoke Tests
 
-A tiny helper class exists at `src/main/java/util/TestSave.java` that can be used to verify DB persistence quickly (it saves a sample bicycle record).
+There are two tiny helper classes useful for verifying database connectivity:
+
+- `src/main/java/util/TestDB.java` — attempts to open a DB connection and prints success/failure.
+- `src/main/java/util/TestSave.java` — saves a sample bicycle record to the database.
+
+Run either class from your IDE (or using `mvn exec:java` with the correct main class).
+
+---
+
+## 🛠 How the Code Works (Quick Notes)
+
+### Mushroom Identification
+- The GUI reads checkbox values and calls `MushroomLogic.identify(...)`.
+- The result text is shown in the form and can be saved to the DB via `MushroomDAO.save()`.
+
+### Bicycle Calculator
+- `Calculate` converts `start`/`end` (hour integers) into `totalHours` and `amount`.
+- The amount uses this pricing model:
+  - 0–6, 21–23 → 500 per hour
+  - 7–13, 19–20 → 1000 per hour
+  - 14–18 → 1500 per hour
+- Save / Update / Delete operations are handled by `BicycleDAO`.
 
 ---
 
 ## ✅ Notes / Next Improvements
 
-- Add full CRUD list view for bicycles and mushrooms.
-- Improve validation and error reporting (numeric parsing, missing fields).
-- Externalize DB configuration (properties file or environment variables).
+- Add full CRUD list view for bicycles and mushrooms (currently there is no listing view).
+- Improve validation and error reporting (numeric parsing, missing fields, invalid times).
+- Externalize DB configuration (properties file, env vars, or a secrets manager).
 - Add unit tests for logic classes (`Calculator`, `MushroomLogic`).
 
 ---
