@@ -133,7 +133,24 @@ public class MushroomForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        try {
+            boolean gills = chkGills.isSelected();
+            boolean forest = chkForest.isSelected();
+            boolean ring = chkRing.isSelected();
+            boolean convex = chkConvex.isSelected();
+
+            String name = lblResult.getText();
+
+            model.Mushroom m = new model.Mushroom(name, gills, forest, ring, convex);
+
+            dao.MushroomDAO dao = new dao.MushroomDAO();
+            dao.save(m);
+
+            javax.swing.JOptionPane.showMessageDialog(this, "Saved!");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+}
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnIdentifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdentifyActionPerformed
