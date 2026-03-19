@@ -72,6 +72,7 @@ public class MushroomForm extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnExit.setText("Exit");
         btnExit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        btnExit.addActionListener(this::btnExitActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,6 +164,10 @@ public class MushroomForm extends javax.swing.JFrame {
 
         lblResult.setText(result);
     }//GEN-LAST:event_btnIdentifyActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
