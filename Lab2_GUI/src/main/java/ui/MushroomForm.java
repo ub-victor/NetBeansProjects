@@ -29,31 +29,105 @@ public class MushroomForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        chkGills = new javax.swing.JRadioButton();
+        chkForest = new javax.swing.JRadioButton();
+        chkRing = new javax.swing.JRadioButton();
+        chkConvex = new javax.swing.JRadioButton();
+        lblResult = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        btnIdentify = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         jLabel1.setText("MushroomForm");
 
+        chkGills.setText("Has gills?");
+
+        chkForest.setText("Grows in forest?");
+
+        chkRing.setText("Has ring?");
+
+        chkConvex.setText("Convex cap?");
+
+        lblResult.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        lblResult.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        lblResult.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jLabel2.setText("Result:");
+
+        btnIdentify.setText("Identify");
+
+        btnSave.setText("Save");
+        btnSave.addActionListener(this::btnSaveActionPerformed);
+
+        btnExit.setText("Exit");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(283, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(261, 261, 261))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(btnIdentify)
+                .addGap(126, 126, 126)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSave)
+                        .addGap(116, 116, 116)
+                        .addComponent(btnExit)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(288, 288, 288))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(chkConvex)
+                            .addComponent(chkGills)
+                            .addComponent(chkForest)
+                            .addComponent(chkRing))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(514, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(chkGills)
+                .addGap(47, 47, 47)
+                .addComponent(chkForest)
+                .addGap(42, 42, 42)
+                .addComponent(chkRing)
+                .addGap(31, 31, 31)
+                .addComponent(chkConvex)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIdentify)
+                    .addComponent(btnSave)
+                    .addComponent(btnExit))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,6 +155,15 @@ public class MushroomForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnIdentify;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JRadioButton chkConvex;
+    private javax.swing.JRadioButton chkForest;
+    private javax.swing.JRadioButton chkGills;
+    private javax.swing.JRadioButton chkRing;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField lblResult;
     // End of variables declaration//GEN-END:variables
 }
