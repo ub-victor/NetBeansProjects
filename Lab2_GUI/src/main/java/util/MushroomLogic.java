@@ -1,13 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package util;
 
-/**
- *
- * @author victoire
- */
 public class MushroomLogic {
-    
+
+    public static String identify(boolean gills, boolean forest, boolean ring, boolean convex) {
+
+        if (!gills) {
+            return "Cepe de bordeau";
+        }
+
+        if (gills && forest && !ring && !convex) {
+            return "Girolle";
+        }
+
+        if (gills && !forest && ring && convex) {
+            return "Agaric jaunissant";
+        }
+
+        if (gills && !forest && ring && !convex) {
+            return "Coprin chevelu";
+        }
+
+        if (gills && forest && ring && convex) {
+            return "Amanite tue-mouche";
+        }
+
+        if (gills && forest && !ring && convex) {
+            return "Pied bleu";
+        }
+
+        return "Unknown";
+    }
 }
