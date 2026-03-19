@@ -93,6 +93,7 @@ public class BicycleForm extends javax.swing.JFrame {
         txtStart.setPreferredSize(new java.awt.Dimension(100, 26));
 
         txtEnd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        txtEnd.setMinimumSize(new java.awt.Dimension(100, 22));
 
         txtTotal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         txtTotal.addActionListener(this::txtTotalActionPerformed);
