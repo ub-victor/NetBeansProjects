@@ -60,18 +60,23 @@ public class BicycleForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(new java.awt.Color(102, 0, 255));
 
+        btnCalculate.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnCalculate.setText("Calculate");
         btnCalculate.addActionListener(this::btnCalculateActionPerformed);
 
+        btnSave.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(this::btnSaveActionPerformed);
 
+        btnUpdate.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(this::btnUpdateActionPerformed);
 
+        btnDelete.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(this::btnDeleteActionPerformed);
 
+        btnExit.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnExit.setText("Exit");
         btnExit.addActionListener(this::btnExitActionPerformed);
 
@@ -98,13 +103,18 @@ public class BicycleForm extends javax.swing.JFrame {
         jLabel2.setText("BicycleForm");
         jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
+        jTextField5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField5.setText("Start Time:");
+        jTextField5.addActionListener(this::jTextField5ActionPerformed);
 
+        jTextField6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField6.setText("Total Hours:");
 
+        jTextField7.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField7.setText("End Time:");
         jTextField7.addActionListener(this::jTextField7ActionPerformed);
 
+        jTextField8.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField8.setText("Amount:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,10 +150,10 @@ public class BicycleForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(251, 251, 251)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,8 +186,8 @@ public class BicycleForm extends javax.swing.JFrame {
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtAmount)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -280,6 +290,10 @@ public class BicycleForm extends javax.swing.JFrame {
     private void txtAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAmountActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAmountActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
     /**
      * @param args the command line arguments
