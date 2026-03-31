@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package financemanager.models;
 
-/**
- *
- * @author victoire
- */
+import java.math.BigDecimal;
+import java.sql.Date;
+
 public class Budget {
-    
+    private int id;
+    private int userId;
+    private int categoryId;
+    private Date monthYear;   // first day of month
+    private BigDecimal amount;
+
+    // constructors, getters, setters
 }
