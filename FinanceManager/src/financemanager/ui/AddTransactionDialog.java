@@ -80,12 +80,17 @@ public class AddTransactionDialog extends JDialog {
         if (transaction != null) {
             typeCombo.setSelectedItem(transaction.getType());
             updateCategories();
-            categoryCombo.setSelectedItem(getCategoryName(transaction.getCategoryId()));
+            // set category selection
+            Category cat = getCategoryById(transaction.getCategoryId());
+            if (cat != null) {
+                categoryCombo.setSelectedItem(cat.getName() + " (" + cat.getId() + ")");
+            }
             amountField.setText(transaction.getAmount().toString());
             dateSpinner.setValue(transaction.getDate());
             descArea.setText(transaction.getDescription());
         } else {
             dateSpinner.setValue(Date.valueOf(LocalDate.now()));
+            updateCategories(); // initial populate
         }
 
         saveBtn.addActionListener(e -> save());
@@ -104,21 +109,28 @@ public class AddTransactionDialog extends JDialog {
                 categoryCombo.addItem(c.getName() + " (" + c.getId() + ")");
             }
         }
+        if (categoryCombo.getItemCount() == 0) {
+            categoryCombo.addItem("No categories available");
+        }
     }
 
-    private String getCategoryName(int id) {
+    private Category getCategoryById(int id) {
         List<Category> cats = categoryDAO.getAllCategories();
-        for (Category c : cats) if (c.getId() == id) return c.getName() + " (" + c.getId() + ")";
-        return "";
+        for (Category c : cats) if (c.getId() == id) return c;
+        return null;
     }
 
     private int getCategoryIdFromSelected() {
         String selected = (String) categoryCombo.getSelectedItem();
-        if (selected == null) return -1;
+        if (selected == null || selected.equals("No categories available")) return -1;
         int start = selected.lastIndexOf('(');
         int end = selected.lastIndexOf(')');
         if (start != -1 && end != -1) {
-            return Integer.parseInt(selected.substring(start+1, end));
+            try {
+                return Integer.parseInt(selected.substring(start+1, end));
+            } catch (NumberFormatException e) {
+                return -1;
+            }
         }
         return -1;
     }
@@ -127,7 +139,15 @@ public class AddTransactionDialog extends JDialog {
         try {
             String type = (String) typeCombo.getSelectedItem();
             int catId = getCategoryIdFromSelected();
-            BigDecimal amount = new BigDecimal(amountField.getText());
+            if (catId == -1) {
+                JOptionPane.showMessageDialog(this, "Please select a valid category");
+                return;
+            }
+            BigDecimal amount = new BigDecimal(amountField.getText().trim());
+            if (amount.compareTo(BigDecimal.ZERO) <= 0) {
+                JOptionPane.showMessageDialog(this, "Amount must be positive");
+                return;
+            }
             Date date = new Date(((java.util.Date) dateSpinner.getValue()).getTime());
             String desc = descArea.getText();
 
@@ -149,10 +169,10 @@ public class AddTransactionDialog extends JDialog {
                 saved = transactionDAO.updateTransaction(transaction);
             }
             if (saved) {
-                JOptionPane.showMessageDialog(this, "Saved");
+                JOptionPane.showMessageDialog(this, "Saved successfully");
                 dispose();
             } else {
-                JOptionPane.showMessageDialog(this, "Error saving");
+                JOptionPane.showMessageDialog(this, "Error saving transaction");
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Invalid input: " + ex.getMessage());
