@@ -91,7 +91,6 @@ public class UserDashboard extends JFrame {
         model.setRowCount(0);
         List<Transaction> transactions = transactionDAO.getTransactionsByUser(currentUserId);
         for (Transaction t : transactions) {
-            // get category name
             Category cat = getCategoryById(t.getCategoryId());
             model.addRow(new Object[]{
                 t.getId(), t.getDate(), cat != null ? cat.getName() : "?", t.getType(),
@@ -161,7 +160,7 @@ public class UserDashboard extends JFrame {
         }
     }
 
-    // Reports panel (simple summary)
+    // Reports panel
     private JPanel createReportsPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         JTextArea reportArea = new JTextArea();
@@ -174,7 +173,6 @@ public class UserDashboard extends JFrame {
     }
 
     private void generateReport(JTextArea reportArea) {
-        // Calculate total income, total expense, and budgets vs actual for current month
         LocalDate now = LocalDate.now();
         Date monthStart = Date.valueOf(now.withDayOfMonth(1));
         Date monthEnd = Date.valueOf(now.withDayOfMonth(now.lengthOfMonth()));
@@ -183,7 +181,7 @@ public class UserDashboard extends JFrame {
         BigDecimal totalExpense = BigDecimal.ZERO;
         List<Transaction> transactions = transactionDAO.getTransactionsByUser(currentUserId);
         for (Transaction t : transactions) {
-            if (t.getDate().after(monthStart) && t.getDate().before(monthEnd)) {
+            if (!t.getDate().before(monthStart) && !t.getDate().after(monthEnd)) {
                 if ("income".equals(t.getType())) totalIncome = totalIncome.add(t.getAmount());
                 else totalExpense = totalExpense.add(t.getAmount());
             }
@@ -204,7 +202,7 @@ public class UserDashboard extends JFrame {
                     BigDecimal actual = BigDecimal.ZERO;
                     for (Transaction t : transactions) {
                         if (t.getCategoryId() == b.getCategoryId() && "expense".equals(t.getType())
-                                && t.getDate().after(monthStart) && t.getDate().before(monthEnd)) {
+                                && !t.getDate().before(monthStart) && !t.getDate().after(monthEnd)) {
                             actual = actual.add(t.getAmount());
                         }
                     }
