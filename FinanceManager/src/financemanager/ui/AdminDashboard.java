@@ -22,20 +22,17 @@ public class AdminDashboard extends JFrame {
         tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Users", createUsersPanel());
         tabbedPane.addTab("Categories", createCategoriesPanel());
-        // optionally add "All Transactions" or "Reports"
         add(tabbedPane);
     }
 
     private JPanel createUsersPanel() {
         JPanel panel = new JPanel(new BorderLayout());
 
-        // Table to display users
         DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Username", "Password", "Role"}, 0);
         JTable table = new JTable(model);
         JScrollPane scroll = new JScrollPane(table);
         panel.add(scroll, BorderLayout.CENTER);
 
-        // Buttons panel
         JPanel btnPanel = new JPanel();
         JButton addBtn = new JButton("Add User");
         JButton editBtn = new JButton("Edit User");
@@ -47,18 +44,13 @@ public class AdminDashboard extends JFrame {
         btnPanel.add(refreshBtn);
         panel.add(btnPanel, BorderLayout.SOUTH);
 
-        // Load users
         refreshUsers(model);
 
-        // Action listeners
         refreshBtn.addActionListener(e -> refreshUsers(model));
         addBtn.addActionListener(e -> {
-            // Show dialog to add new user
             UserDialog dialog = new UserDialog(this, "Add User", null);
             dialog.setVisible(true);
-            if (dialog.isSaved()) {
-                refreshUsers(model);
-            }
+            if (dialog.isSaved()) refreshUsers(model);
         });
         editBtn.addActionListener(e -> {
             int selectedRow = table.getSelectedRow();
@@ -68,9 +60,7 @@ public class AdminDashboard extends JFrame {
                 if (user != null) {
                     UserDialog dialog = new UserDialog(this, "Edit User", user);
                     dialog.setVisible(true);
-                    if (dialog.isSaved()) {
-                        refreshUsers(model);
-                    }
+                    if (dialog.isSaved()) refreshUsers(model);
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "Select a user to edit");
@@ -109,7 +99,6 @@ public class AdminDashboard extends JFrame {
         return null;
     }
 
-    // Categories panel (similar)
     private JPanel createCategoriesPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Name", "Type"}, 0);
@@ -152,7 +141,7 @@ public class AdminDashboard extends JFrame {
             int row = table.getSelectedRow();
             if (row >= 0) {
                 int id = (int) model.getValueAt(row, 0);
-                int confirm = JOptionPane.showConfirmDialog(this, "Delete category? Transactions using it will be affected.", "Confirm", JOptionPane.YES_NO_OPTION);
+                int confirm = JOptionPane.showConfirmDialog(this, "Delete category? Transactions using it may be affected.", "Confirm", JOptionPane.YES_NO_OPTION);
                 if (confirm == JOptionPane.YES_OPTION) {
                     categoryDAO.deleteCategory(id);
                     refreshCategories(model);
@@ -176,6 +165,4 @@ public class AdminDashboard extends JFrame {
         for (Category c : cats) if (c.getId() == id) return c;
         return null;
     }
-
-    // Inner dialog classes (UserDialog, CategoryDialog) – see below
 }
