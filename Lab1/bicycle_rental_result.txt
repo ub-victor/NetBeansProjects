@@ -1,5 +1,5 @@
-Start Time : 20:00
-End Time   : 23:00
-Time Used  : 3 hour(s)
+Start Time : 2:00
+End Time   : 3:00
+Time Used  : 1 hour(s)
 
-Amount to Pay : 2000 RWF
+Amount to Pay : 500 RWF
