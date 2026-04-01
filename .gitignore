@@ -3,3 +3,8 @@
 /GgroupUI/target/
 /Lab2_GUI/target/
 /FinanceManager/nbproject/private/
+/FinanceManager/build/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
